@@ -20,28 +20,33 @@
           </nz-page-header-title>
 
           <nz-page-header-extra>
-            <nz-space>
-              <button *nzSpaceItem nz-button [disabled]="!invoiceForm.valid" (click)="openPdf()">
-                <span nz-icon nzType="download" nzTheme="outline"></span>
-                Open Invoice
-              </button>
+            <div nz-row [nzGutter]="[8, 8]">
+              <div nz-col nzXs="24" nzSm="24" nzMd="8" nzLg="8" nzXl="8">
+                <button nz-button [disabled]="!invoiceForm.valid" (click)="openPdf()">
+                  <span nz-icon nzType="download" nzTheme="outline"></span>
+                  Open Invoice
+                </button>
+              </div>
 
-              <button *nzSpaceItem nz-button [disabled]="!invoiceForm.valid" (click)="printPdf()">
-                <span nz-icon nzType="printer" nzTheme="outline"></span>
-                Print Invoice
-              </button>
+              <div nz-col nzXs="24" nzSm="24" nzMd="8" nzLg="8" nzXl="8">
+                <button nz-button [disabled]="!invoiceForm.valid" (click)="printPdf()">
+                  <span nz-icon nzType="printer" nzTheme="outline"></span>
+                  Print Invoice
+                </button>
+              </div>
               
-              <button 
-                *nzSpaceItem 
-                nz-button 
-                [disabled]="!invoiceForm.valid" 
-                nzType="primary" 
-                (click)="downloadPdf()"
-              >
-                <span nz-icon nzType="download" nzTheme="outline"></span>
-                Download Invoice
-              </button>
-            </nz-space>
+              <div nz-col nzXs="24" nzSm="24" nzMd="8" nzLg="8" nzXl="8">
+                <button 
+                  nz-button 
+                  [disabled]="!invoiceForm.valid" 
+                  nzType="primary" 
+                  (click)="downloadPdf()"
+                >
+                  <span nz-icon nzType="download" nzTheme="outline"></span>
+                  Download Invoice
+                </button>
+              </div>
+            </div>
           </nz-page-header-extra>
 
           <nz-page-header-content>
