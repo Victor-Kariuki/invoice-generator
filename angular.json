@@ -27,7 +27,12 @@
             "inlineStyleLanguage": "less",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
               "src/styles.less"
@@ -35,7 +40,7 @@
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "itemion": {
               "budgets": [
                 {
                   "type": "initial",
@@ -59,13 +64,13 @@
               "namedChunks": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "itemion"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "production": {
-              "browserTarget": "invoice-generator:build:production"
+            "itemion": {
+              "browserTarget": "invoice-generator:build:itemion"
             },
             "development": {
               "browserTarget": "invoice-generator:build:development"
@@ -96,6 +101,15 @@
               "src/styles.less"
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
