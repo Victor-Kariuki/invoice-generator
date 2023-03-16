@@ -293,6 +293,7 @@
       </nz-space>
 
       <ng-template #errorTemplate let-control>
+        <ng-container *ngIf="control.hasError('email')">The email is not valid</ng-container>
         <ng-container *ngIf="control.hasError('required')">
           This field is required
         </ng-container>
